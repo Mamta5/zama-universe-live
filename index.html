@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ZAMA Universe Live</title>
+  <style>
+    body {
+      background: radial-gradient(circle at top left, #0b1220, #000);
+      color: #e6f0ff;
+      font-family: "Poppins", sans-serif;
+      text-align: center;
+      padding: 40px;
+      margin: 0;
+    }
+    h1 {
+      font-size: 2.8rem;
+      background: linear-gradient(90deg, #22d3ee, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glow 3s ease-in-out infinite alternate;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #22d3ee; }
+      to { text-shadow: 0 0 25px #a78bfa; }
+    }
+    .counter {
+      font-size: 3rem;
+      color: #22d3ee;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+    .bar {
+      width: 0%;
+      height: 16px;
+      background: linear-gradient(90deg, #22d3ee, #a78bfa);
+      border-radius: 10px;
+      margin: 20px auto;
+      transition: width 1s ease;
+    }
+    .bar-wrap {
+      width: 80%;
+      background: #1e293b;
+      border-radius: 10px;
+      margin: 0 auto;
+      padding: 3px;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      background: linear-gradient(90deg, #22d3ee, #a78bfa);
+      color: #000;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    footer {
+      margin-top: 60px;
+      color: #94a3b8;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>💫 ZAMA Universe Live</h1>
+  <div class="counter" id="count">0</div>
+  <div class="bar-wrap">
+    <div class="bar" id="bar"></div>
+  </div>
+  <button id="btn">Join Quest</button>
+  <footer>Built by Mamta5 ⚡ Powered by ZAMA</footer>
+
+  <script>
+    let count = 0;
+    const bar = document.getElementById('bar');
+    const counter = document.getElementById('count');
+    document.getElementById('btn').addEventListener('click', () => {
+      count++;
+      counter.textContent = count;
+      bar.style.width = Math.min(count, 100) + '%';
+    });
+  </script>
+</body>
+</html>
